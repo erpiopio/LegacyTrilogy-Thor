@@ -1,0 +1,82 @@
+diff --git a/src/log1_runtime.cpp b/src/log1_runtime.cpp
+index 908ac04..87a0d06 100644
+--- a/src/log1_runtime.cpp
++++ b/src/log1_runtime.cpp
+@@ -40,7 +40,7 @@ constexpr std::size_t log1_sprite_count = 109;
+ constexpr std::size_t log1_music_count = 18;
+ 
+ constexpr std::uint16_t key_a = 1U << 0U;
+-constexpr std::uint16_t key_b = 1U << 1U;
++[[maybe_unused]] [[maybe_unused]] constexpr std::uint16_t key_b = 1U << 1U;
+ constexpr std::uint16_t key_start = 1U << 3U;
+ constexpr std::uint16_t key_right = 1U << 4U;
+ constexpr std::uint16_t key_up = 1U << 6U;
+diff --git a/src/rom.cpp b/src/rom.cpp
+index 7559e49..57c957c 100644
+--- a/src/rom.cpp
++++ b/src/rom.cpp
+@@ -90,6 +90,13 @@ const GameProfile buus_fury_usa_rev0 = [] {
+     profile.title_bgm_record = 0x003BBB10;
+     return profile;
+ }();
++
++const GameProfile buus_fury_spanish_expanded_rev0 = [] {
++    GameProfile profile = buus_fury_usa_rev0;
++    profile.name = "Spanish Expanded Rev 0";
++    profile.expected_size = 10514228;
++    return profile;
++}();
+ }
+ 
+ Rom::Rom(const std::filesystem::path& path) {
+@@ -188,6 +195,14 @@ bool matches_buus_fury_usa_rev0(const Rom& rom) {
+            rom.revision() == 0;
+ }
+ 
++bool matches_buus_fury_spanish_expanded_rev0(const Rom& rom) {
++    return rom.size() == buus_fury_spanish_expanded_rev0.expected_size &&
++           rom.game_code() == "BG3E" &&
++           rom.revision() == 0 &&
++           rom.u32(0x179764) == 0x08917500 &&
++           rom.u32(0x6B6BDC) == 0x086A89D0;
++}
++
+ bool is_log1_rom(const Rom& rom) {
+     return matches_log1_europe_rev0(rom);
+ }
+@@ -197,7 +212,8 @@ bool is_log2_rom(const Rom& rom) {
+ }
+ 
+ bool is_buus_fury_rom(const Rom& rom) {
+-    return matches_buus_fury_usa_rev0(rom);
++    return matches_buus_fury_usa_rev0(rom) ||
++           matches_buus_fury_spanish_expanded_rev0(rom);
+ }
+ 
+ bool is_supported_rom(const Rom& rom) {
+@@ -229,6 +245,8 @@ const GameProfile& profile_for(const Rom& rom) {
+     if (matches_europe_rev0(rom)) return europe_rev0;
+     if (matches_usa_rev0(rom)) return usa_rev0;
+     if (matches_buus_fury_usa_rev0(rom)) return buus_fury_usa_rev0;
++    if (matches_buus_fury_spanish_expanded_rev0(rom))
++        return buus_fury_spanish_expanded_rev0;
+     throw std::runtime_error(
+         "this command requires LOG2 ALFP/ALFE or Buu's Fury BG3E");
+ }
+diff --git a/third_party/viogsf/vbam/gba/GBAcpu.h b/third_party/viogsf/vbam/gba/GBAcpu.h
+index 5f3cf5c..02efe85 100644
+--- a/third_party/viogsf/vbam/gba/GBAcpu.h
++++ b/third_party/viogsf/vbam/gba/GBAcpu.h
+@@ -7,7 +7,11 @@ extern int armExecute(GBASystem *);
+ extern int thumbExecute(GBASystem *);
+ 
+ #ifdef __GNUC__
+-# define INSN_REGPARM __attribute__((regparm(2)))
++# if defined(__i386__) || defined(_M_IX86)
++#  define INSN_REGPARM __attribute__((regparm(2)))
++# else
++#  define INSN_REGPARM
++# endif
+ # define LIKELY(x) __builtin_expect(!!(x),1)
+ # define UNLIKELY(x) __builtin_expect(!!(x),0)
+ #else

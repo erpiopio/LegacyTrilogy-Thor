@@ -1,0 +1,33 @@
+# Android runtime configuration only; generated guest code stays local.
+[game]
+name = "Dragon Ball Z: Buu's Fury"
+short_name = "dragon_ball_z_buus_fury"
+
+[bios]
+path = "../../bios/gba_bios.bin"
+sha1 = "300c20df6731a33952ded8c436f7f186d25d3492"
+hle = false
+
+[rom]
+path = "../../roms/dragon_ball_z_buus_fury_usa.gba"
+sha1 = "f1c4b07554d2a3b1ad2f325307051e775ce68087"
+sha1_alt = ["ee667f656f6c3a128b9d59c657b3686e58b23eb5"]
+crc32 = "0x01C1707F"
+crc32_alt = ["0xDCF23468"]
+
+[save]
+type = "eeprom"
+size = 8192
+path = "../../saves/dragon_ball_z_buus_fury_usa.sav"
+
+[runtime]
+debug_port = 19889
+window_title = "Buu's Fury Thor"
+
+[video]
+screen = "frontlit"
+view_width = 240
+resize_view = false
+
+[audio]
+shadow = false

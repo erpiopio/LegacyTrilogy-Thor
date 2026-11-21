@@ -1,0 +1,498 @@
+{
+  "misiones": [
+    {
+      "id": 0,
+      "texto": "Ve al Castillo de Enma Daio-sama",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 2
+      },
+      "activa": true
+    },
+    {
+      "id": 1,
+      "texto": "Entrena con Peleadores del Otro Mundo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 6
+      },
+      "activa": {
+        "flag": 3
+      }
+    },
+    {
+      "id": 2,
+      "texto": "Ve al Torneo del Otro Mundo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 13
+      },
+      "activa": {
+        "flag": 12
+      }
+    },
+    {
+      "id": 3,
+      "texto": "Ve a clase en el Instituto Estrella Naranja",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 21
+      },
+      "activa": {
+        "flag": 15
+      }
+    },
+    {
+      "id": 4,
+      "texto": "Vuela a Ciudad del Oeste y habla con Bulma",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 25
+      },
+      "activa": {
+        "flag": 21
+      }
+    },
+    {
+      "id": 5,
+      "texto": "Lucha contra el crimen en Ciudad Satán",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 27
+      },
+      "activa": {
+        "flag": 25
+      }
+    },
+    {
+      "id": 6,
+      "texto": "Derrota a la Banda del Tiburón Rojo y salva al Alcalde",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 34
+      },
+      "activa": {
+        "flag": 27
+      }
+    },
+    {
+      "id": 7,
+      "texto": "Salva a Chobi del Circo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 38
+      },
+      "activa": {
+        "flag": 35
+      }
+    },
+    {
+      "id": 8,
+      "texto": "Dile a tu madre que Gokú regresará",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 43
+      },
+      "activa": {
+        "flag": 39
+      }
+    },
+    {
+      "id": 9,
+      "texto": "Dile a Piccoro y Dendé que Gokú regresará.",
+      "estrella": "bronce",
+      "oculta": {
+        "flag": 43
+      },
+      "completada": {
+        "flag": 40
+      },
+      "activa": {
+        "flag": 39
+      }
+    },
+    {
+      "id": 10,
+      "texto": "Dile a Bulma y Vegeta que Gokú regresará.",
+      "estrella": "bronce",
+      "oculta": {
+        "flag": 43
+      },
+      "completada": {
+        "flag": 41
+      },
+      "activa": {
+        "flag": 39
+      }
+    },
+    {
+      "id": 11,
+      "texto": "Dile al Maestro Roshi y a Krilin que Gokú regresará.",
+      "estrella": "bronce",
+      "oculta": {
+        "flag": 43
+      },
+      "completada": {
+        "flag": 42
+      },
+      "activa": {
+        "flag": 39
+      }
+    },
+    {
+      "id": 12,
+      "texto": "Reúnete con Goten en el bosque oriental para entrenar.",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 44
+      },
+      "activa": {
+        "flag": 43
+      }
+    },
+    {
+      "id": 13,
+      "texto": "Reúnete con Bulma para ir al Torneo Mundial",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 45
+      },
+      "activa": {
+        "flag": 44
+      }
+    },
+    {
+      "id": 14,
+      "texto": "Inscríbete en el Torneo Mundial",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 48
+      },
+      "activa": {
+        "flag": 45
+      }
+    },
+    {
+      "id": 15,
+      "texto": "Ve al Templo de Kamisama y consigue una Semilla del Ermitaño de Karin.",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 51
+      },
+      "activa": {
+        "flag": 50
+      }
+    },
+    {
+      "id": 16,
+      "texto": "Encuentra la Nave Espacial de Babidi",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 55
+      },
+      "activa": {
+        "flag": 54
+      }
+    },
+    {
+      "id": 17,
+      "texto": "Entra en la Nave de Babidi y Derrota a Dabura",
+      "estrella": "oro",
+      "oculta": {
+        "flag": 73
+      },
+      "completada": false,
+      "activa": {
+        "flag": 55
+      }
+    },
+    {
+      "id": 18,
+      "texto": "Destruye la Nave Espacial de Babidi",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 75
+      },
+      "activa": {
+        "flag": 73
+      }
+    },
+    {
+      "id": 19,
+      "texto": "Ve al Templo de Kamisama",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 76
+      },
+      "activa": {
+        "flag": 75
+      }
+    },
+    {
+      "id": 20,
+      "texto": "Consigue el Radar del Dragón de Bulma",
+      "estrella": "plata",
+      "oculta": false,
+      "completada": {
+        "flag": 77
+      },
+      "activa": {
+        "flag": 76
+      }
+    },
+    {
+      "id": 21,
+      "texto": "Encuentra las Esferas del Dragón",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 119
+      },
+      "activa": {
+        "flag": 76
+      }
+    },
+    {
+      "id": 22,
+      "texto": "Encuentra a Vegeta en el Infierno",
+      "estrella": "plata",
+      "oculta": false,
+      "completada": {
+        "flag": 123
+      },
+      "activa": {
+        "flag": 121
+      }
+    },
+    {
+      "id": 23,
+      "texto": "Derrota a Janemba",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 125
+      },
+      "activa": {
+        "flag": 121
+      }
+    },
+    {
+      "id": 24,
+      "texto": "Saca la Espada Z de la roca",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 128
+      },
+      "activa": {
+        "flag": 127
+      }
+    },
+    {
+      "id": 25,
+      "texto": "Duerme una siesta en el Templo de Kamisama",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 129
+      },
+      "activa": {
+        "flag": 128
+      }
+    },
+    {
+      "id": 26,
+      "texto": "Mejora el Rastreador del Dr. Brief en la Corporación Cápsula.",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 153
+      },
+      "activa": {
+        "flag": 128
+      }
+    },
+    {
+      "id": 27,
+      "texto": "Salva a Goten y Trunks de Super Boo.",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 133
+      },
+      "activa": {
+        "flag": 132
+      }
+    },
+    {
+      "id": 28,
+      "texto": "Encuentra a Dendé",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 136
+      },
+      "activa": {
+        "flag": 133
+      }
+    },
+    {
+      "id": 29,
+      "texto": "Regresa y derrota a Super Boo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 147
+      },
+      "activa": {
+        "flag": 137
+      }
+    },
+    {
+      "id": 30,
+      "texto": "Encuentra a Gohan, Goten, Trunks y Piccoro.",
+      "estrella": "plata",
+      "oculta": false,
+      "completada": {
+        "all": [
+          {
+            "flag": 144
+          },
+          {
+            "flag": 145
+          },
+          {
+            "flag": 146
+          }
+        ]
+      },
+      "activa": {
+        "flag": 138
+      }
+    },
+    {
+      "id": 31,
+      "texto": "Escapa de Boo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 148
+      },
+      "activa": {
+        "flag": 147
+      }
+    },
+    {
+      "id": 32,
+      "texto": "Ve al Páramo Desértico y Derrota a Pequeño Boo",
+      "estrella": "oro",
+      "oculta": false,
+      "completada": {
+        "flag": 149
+      },
+      "activa": {
+        "flag": 148
+      }
+    },
+    {
+      "id": 33,
+      "texto": "Consigue una cerveza para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 363
+      },
+      "activa": {
+        "flag": 362
+      }
+    },
+    {
+      "id": 34,
+      "texto": "Consigue un pavo para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 364
+      },
+      "activa": {
+        "flag": 363
+      }
+    },
+    {
+      "id": 35,
+      "texto": "Consigue a Aderezo Satán para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 365
+      },
+      "activa": {
+        "flag": 364
+      }
+    },
+    {
+      "id": 36,
+      "texto": "Consigue un elixir para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 366
+      },
+      "activa": {
+        "flag": 365
+      }
+    },
+    {
+      "id": 37,
+      "texto": "Consigue una cola de dinosaurio para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 367
+      },
+      "activa": {
+        "flag": 366
+      }
+    },
+    {
+      "id": 38,
+      "texto": "Consigue un super elixir para el Guardián del Faro",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 368
+      },
+      "activa": {
+        "flag": 367
+      }
+    },
+    {
+      "id": 39,
+      "texto": "Derrota a bandidos de aeronaves y consigue bandanas para el ninja.",
+      "estrella": "bronce",
+      "oculta": false,
+      "completada": {
+        "flag": 370
+      },
+      "activa": {
+        "flag": 369
+      }
+    }
+  ]
+}

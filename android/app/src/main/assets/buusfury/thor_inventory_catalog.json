@@ -1,0 +1,676 @@
+{
+    "version": 1,
+    "estado": "catalogo_grafico_provisional",
+    "aviso": "No representa los objetos poseídos; cantidades en 0 hasta integrar lectura de RAM.",
+    "clasificacion": "Índices 000–025 Suministros, 026–082 Objetos de historia (clasificación provisional, revisar contra juego).",
+    "pestanas": [
+        [
+            {
+                "id": 0,
+                "nombre": "Sopa de miso",
+                "descripcion": "Recupera 20 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_000.png",
+                "por_verificar": false
+            },
+            {
+                "id": 1,
+                "nombre": "Bola de arroz",
+                "descripcion": "Recupera 40 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_001.png",
+                "por_verificar": false
+            },
+            {
+                "id": 2,
+                "nombre": "Muslo de pollo",
+                "descripcion": "Recupera 80 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_002.png",
+                "por_verificar": false
+            },
+            {
+                "id": 3,
+                "nombre": "Hamburguesa",
+                "descripcion": "Recupera 120 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_003.png",
+                "por_verificar": false
+            },
+            {
+                "id": 4,
+                "nombre": "Onigiri",
+                "descripcion": "Recupera 200 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_004.png",
+                "por_verificar": false
+            },
+            {
+                "id": 5,
+                "nombre": "Plato de curry",
+                "descripcion": "Recupera 400 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_005.png",
+                "por_verificar": false
+            },
+            {
+                "id": 6,
+                "nombre": "Pavo",
+                "descripcion": "Recupera 800 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_006.png",
+                "por_verificar": false
+            },
+            {
+                "id": 7,
+                "nombre": "Filete",
+                "descripcion": "Recupera 600 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_007.png",
+                "por_verificar": false
+            },
+            {
+                "id": 8,
+                "nombre": "Menú de tres platos",
+                "descripcion": "Recupera 1100 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_008.png",
+                "por_verificar": false
+            },
+            {
+                "id": 9,
+                "nombre": "Cola de dinosaurio",
+                "descripcion": "Recupera 1500 PS.",
+                "cantidad": 0,
+                "icono": "thor_inventory_009.png",
+                "por_verificar": true
+            },
+            {
+                "id": 10,
+                "nombre": "Leche",
+                "descripcion": "Recupera 20 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_010.png",
+                "por_verificar": false
+            },
+            {
+                "id": 11,
+                "nombre": "Té",
+                "descripcion": "Recupera 40 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_011.png",
+                "por_verificar": false
+            },
+            {
+                "id": 12,
+                "nombre": "Refresco",
+                "descripcion": "Recupera 80 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_012.png",
+                "por_verificar": false
+            },
+            {
+                "id": 13,
+                "nombre": "Refresco de vainilla",
+                "descripcion": "Recupera 125 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_013.png",
+                "por_verificar": false
+            },
+            {
+                "id": 14,
+                "nombre": "Refresco de cereza",
+                "descripcion": "Recupera 175 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_014.png",
+                "por_verificar": false
+            },
+            {
+                "id": 15,
+                "nombre": "Cerveza de raíz",
+                "descripcion": "Recupera 250 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_015.png",
+                "por_verificar": false
+            },
+            {
+                "id": 16,
+                "nombre": "Hercule-Ade",
+                "descripcion": "Recupera 350 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_016.png",
+                "por_verificar": false
+            },
+            {
+                "id": 17,
+                "nombre": "Elixir",
+                "descripcion": "Recupera 500 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_017.png",
+                "por_verificar": false
+            },
+            {
+                "id": 18,
+                "nombre": "Súper elixir",
+                "descripcion": "Recupera 750 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_018.png",
+                "por_verificar": false
+            },
+            {
+                "id": 19,
+                "nombre": "Leche de dinosaurio",
+                "descripcion": "Recupera 2500 puntos de energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_019.png",
+                "por_verificar": false
+            },
+            {
+                "id": 20,
+                "nombre": "Agua sagrada",
+                "descripcion": "Aumenta los atributos durante 30 segundos.",
+                "cantidad": 0,
+                "icono": "thor_inventory_020.png",
+                "por_verificar": false
+            },
+            {
+                "id": 21,
+                "nombre": "Judía Senzu",
+                "descripcion": "Restaura completamente salud y energía.",
+                "cantidad": 0,
+                "icono": "thor_inventory_021.png",
+                "por_verificar": false
+            },
+            {
+                "id": 22,
+                "nombre": "Cápsula",
+                "descripcion": "Cápsula misteriosa de contenido desconocido.",
+                "cantidad": 0,
+                "icono": "thor_inventory_022.png",
+                "por_verificar": false
+            },
+            {
+                "id": 23,
+                "nombre": "Cristal de Lázaro",
+                "descripcion": "Revive automáticamente al personaje si cae K.O.",
+                "cantidad": 0,
+                "icono": "thor_inventory_023.png",
+                "por_verificar": false
+            },
+            {
+                "id": 24,
+                "nombre": "Alimentos",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_024.png",
+                "por_verificar": false
+            },
+            {
+                "id": 25,
+                "nombre": "Frasco blanco",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_025.png",
+                "por_verificar": false
+            }
+        ],
+        [
+            {
+                "id": 26,
+                "nombre": "Bola de Dragón (índice 26)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_026.png",
+                "por_verificar": false
+            },
+            {
+                "id": 27,
+                "nombre": "Bola de Dragón (índice 27)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_027.png",
+                "por_verificar": false
+            },
+            {
+                "id": 28,
+                "nombre": "Bola de Dragón (índice 28)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_028.png",
+                "por_verificar": false
+            },
+            {
+                "id": 29,
+                "nombre": "Bola de Dragón (índice 29)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_029.png",
+                "por_verificar": false
+            },
+            {
+                "id": 30,
+                "nombre": "Bola de Dragón (índice 30)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_030.png",
+                "por_verificar": false
+            },
+            {
+                "id": 31,
+                "nombre": "Bola de Dragón (índice 31)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_031.png",
+                "por_verificar": false
+            },
+            {
+                "id": 32,
+                "nombre": "Bola de Dragón (índice 32)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_032.png",
+                "por_verificar": false
+            },
+            {
+                "id": 33,
+                "nombre": "Llave",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_033.png",
+                "por_verificar": false
+            },
+            {
+                "id": 34,
+                "nombre": "Accesorio azul",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_034.png",
+                "por_verificar": false
+            },
+            {
+                "id": 35,
+                "nombre": "Objeto 035 (revisar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_035.png",
+                "por_verificar": true
+            },
+            {
+                "id": 36,
+                "nombre": "Objeto 036 (revisar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_036.png",
+                "por_verificar": true
+            },
+            {
+                "id": 37,
+                "nombre": "Dispositivo",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_037.png",
+                "por_verificar": false
+            },
+            {
+                "id": 38,
+                "nombre": "Dispositivo gris",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_038.png",
+                "por_verificar": false
+            },
+            {
+                "id": 39,
+                "nombre": "Objeto dorado",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_039.png",
+                "por_verificar": false
+            },
+            {
+                "id": 40,
+                "nombre": "Dispositivo gris",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_040.png",
+                "por_verificar": false
+            },
+            {
+                "id": 41,
+                "nombre": "Dispositivo gris",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_041.png",
+                "por_verificar": false
+            },
+            {
+                "id": 42,
+                "nombre": "Bota especial",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_042.png",
+                "por_verificar": false
+            },
+            {
+                "id": 43,
+                "nombre": "Coleccionable 043 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_043.png",
+                "por_verificar": false
+            },
+            {
+                "id": 44,
+                "nombre": "Coleccionable 044 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_044.png",
+                "por_verificar": false
+            },
+            {
+                "id": 45,
+                "nombre": "Coleccionable 045 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_045.png",
+                "por_verificar": false
+            },
+            {
+                "id": 46,
+                "nombre": "Coleccionable 046 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_046.png",
+                "por_verificar": false
+            },
+            {
+                "id": 47,
+                "nombre": "Coleccionable 047 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_047.png",
+                "por_verificar": false
+            },
+            {
+                "id": 48,
+                "nombre": "Coleccionable 048 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_048.png",
+                "por_verificar": false
+            },
+            {
+                "id": 49,
+                "nombre": "Coleccionable 049 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_049.png",
+                "por_verificar": false
+            },
+            {
+                "id": 50,
+                "nombre": "Coleccionable 050 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_050.png",
+                "por_verificar": false
+            },
+            {
+                "id": 51,
+                "nombre": "Coleccionable 051 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_051.png",
+                "por_verificar": false
+            },
+            {
+                "id": 52,
+                "nombre": "Coleccionable 052 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_052.png",
+                "por_verificar": false
+            },
+            {
+                "id": 53,
+                "nombre": "Coleccionable 053 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_053.png",
+                "por_verificar": false
+            },
+            {
+                "id": 54,
+                "nombre": "Coleccionable 054 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_054.png",
+                "por_verificar": false
+            },
+            {
+                "id": 55,
+                "nombre": "Coleccionable 055 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_055.png",
+                "por_verificar": false
+            },
+            {
+                "id": 56,
+                "nombre": "Coleccionable 056 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_056.png",
+                "por_verificar": false
+            },
+            {
+                "id": 57,
+                "nombre": "Coleccionable 057 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_057.png",
+                "por_verificar": false
+            },
+            {
+                "id": 58,
+                "nombre": "Coleccionable 058 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_058.png",
+                "por_verificar": false
+            },
+            {
+                "id": 59,
+                "nombre": "Coleccionable 059 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_059.png",
+                "por_verificar": false
+            },
+            {
+                "id": 60,
+                "nombre": "Coleccionable 060 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_060.png",
+                "por_verificar": false
+            },
+            {
+                "id": 61,
+                "nombre": "Coleccionable 061 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_061.png",
+                "por_verificar": false
+            },
+            {
+                "id": 62,
+                "nombre": "Coleccionable 062 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_062.png",
+                "por_verificar": false
+            },
+            {
+                "id": 63,
+                "nombre": "Coleccionable 063 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_063.png",
+                "por_verificar": false
+            },
+            {
+                "id": 64,
+                "nombre": "Coleccionable 064 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_064.png",
+                "por_verificar": false
+            },
+            {
+                "id": 65,
+                "nombre": "Coleccionable 065 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_065.png",
+                "por_verificar": false
+            },
+            {
+                "id": 66,
+                "nombre": "Coleccionable 066 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_066.png",
+                "por_verificar": false
+            },
+            {
+                "id": 67,
+                "nombre": "Coleccionable 067 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_067.png",
+                "por_verificar": false
+            },
+            {
+                "id": 68,
+                "nombre": "Coleccionable 068 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_068.png",
+                "por_verificar": false
+            },
+            {
+                "id": 69,
+                "nombre": "Coleccionable 069 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_069.png",
+                "por_verificar": false
+            },
+            {
+                "id": 70,
+                "nombre": "Coleccionable 070 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_070.png",
+                "por_verificar": false
+            },
+            {
+                "id": 71,
+                "nombre": "Coleccionable 071 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_071.png",
+                "por_verificar": false
+            },
+            {
+                "id": 72,
+                "nombre": "Coleccionable 072 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_072.png",
+                "por_verificar": false
+            },
+            {
+                "id": 73,
+                "nombre": "Coleccionable 073 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_073.png",
+                "por_verificar": false
+            },
+            {
+                "id": 74,
+                "nombre": "Coleccionable 074 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_074.png",
+                "por_verificar": false
+            },
+            {
+                "id": 75,
+                "nombre": "Coleccionable 075 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_075.png",
+                "por_verificar": false
+            },
+            {
+                "id": 76,
+                "nombre": "Coleccionable 076 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_076.png",
+                "por_verificar": false
+            },
+            {
+                "id": 77,
+                "nombre": "Coleccionable 077 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_077.png",
+                "por_verificar": false
+            },
+            {
+                "id": 78,
+                "nombre": "Coleccionable 078 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_078.png",
+                "por_verificar": false
+            },
+            {
+                "id": 79,
+                "nombre": "Coleccionable 079 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_079.png",
+                "por_verificar": false
+            },
+            {
+                "id": 80,
+                "nombre": "Coleccionable 080 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_080.png",
+                "por_verificar": false
+            },
+            {
+                "id": 81,
+                "nombre": "Coleccionable 081 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_081.png",
+                "por_verificar": false
+            },
+            {
+                "id": 82,
+                "nombre": "Coleccionable 082 (por identificar)",
+                "descripcion": "",
+                "cantidad": 0,
+                "icono": "thor_inventory_082.png",
+                "por_verificar": false
+            }
+        ]
+    ]
+}

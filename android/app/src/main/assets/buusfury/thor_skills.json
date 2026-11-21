@@ -1,0 +1,146 @@
+[
+  {
+    "id": 0,
+    "nombre": "",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 1,
+    "nombre": "Ráfaga Explosiva",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 2,
+    "nombre": "Big Bang",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 3,
+    "nombre": "Big Bang Kamehameha",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 4,
+    "nombre": "Ataque Ardiente",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 5,
+    "nombre": "Explosión del Puño del Dragón",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 6,
+    "nombre": "Kamehameha Eléctrico",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 7,
+    "nombre": "Ráfaga de Energía",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 8,
+    "nombre": "Puño de Energía",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 9,
+    "nombre": "Espada de Energía",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 10,
+    "nombre": "Final Flash",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 11,
+    "nombre": "Kamehameha Llameante",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 12,
+    "nombre": "Danza de la Fusión",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 13,
+    "nombre": "Fantasmas Kamikaze",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 14,
+    "nombre": "Teletransportación",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 15,
+    "nombre": "Kamehameha",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 16,
+    "nombre": "Kamekameha",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 17,
+    "nombre": "Masenko",
+    "tieneNivel": true,
+    "nivelMaximo": 3
+  },
+  {
+    "id": 18,
+    "nombre": "Saiyaman",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 19,
+    "nombre": "Saiyaman",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 20,
+    "nombre": "Super Saiyajin",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 21,
+    "nombre": "Super Saiyajin",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 22,
+    "nombre": "Super Saiyajin 3",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  },
+  {
+    "id": 23,
+    "nombre": "Ataque Ultra Voleibol",
+    "tieneNivel": false,
+    "nivelMaximo": null
+  }
+]

@@ -1,0 +1,45 @@
+# Legacy Trilogy - archivos privados
+*.gba
+*.gbc
+*.rom
+*.bios
+gba_bios.bin
+*.sav
+*.srm
+*.state
+
+# Compilaciones
+.gradle/
+**/build/
+**/.cxx/
+.cxx/
+*.apk
+*.aab
+local.properties
+.idea/
+*.iml
+
+# Credenciales
+.env
+.env.*
+*.keystore
+*.jks
+*.pem
+*.p12
+*.key
+google-services.json
+
+# Copias y temporales
+backups/
+*.tmp
+*.bak
+*.log
+.DS_Store
+__pycache__/
+
+# Development backups
+*.bak-*
+*.orig
+*.rej
+*~
+*.pyc

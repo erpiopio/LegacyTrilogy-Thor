@@ -1,0 +1,309 @@
+# Dragon Ball Z: The Legacy of Goku II (Europe, ALFP, revision 0)
+# Configuracion inicial para investigar la ROM europea.
+# Las funciones y direcciones IWRAM se identificaran por separado.
+
+[game]
+name = "Dragon Ball Z: The Legacy of Goku II"
+short_name = "dragon_ball_z_legacy_of_goku_ii"
+
+[program]
+name = "Dragon Ball Z: The Legacy of Goku II (Europe)"
+id = "ALFP"
+load_address = 0x08000000
+size = 0x00800000
+entry_pc = 0x08000000
+speculative_literal_harvest = false
+aot_scan_start = 0x080000C0
+aot_scan_end = 0x08030000
+static_resume_all = true
+codegen_shards = 32
+
+[identity]
+sha1 = "db36ff52fcd63f753f9d66439aa3d2216701c326"
+
+[bios]
+path = "../../bios/gba_bios.bin"
+sha1 = "300c20df6731a33952ded8c436f7f186d25d3492"
+hle = false
+
+[rom]
+path = "../../roms/legacy_of_goku_ii_europe_alfp.gba"
+sha1 = "db36ff52fcd63f753f9d66439aa3d2216701c326"
+
+[save]
+type = "eeprom"
+size = 8192
+path = "../../saves/legacy_of_goku_ii_europe_alfp.sav"
+
+[runtime]
+debug_port = 19889
+window_title = "Legacy of Goku II Thor"
+
+[video]
+screen = "frontlit"
+view_width = 284
+resize_view = true
+
+[audio]
+shadow = false
+
+# The ALFP startup walks this complete PC-relative Thumb constructor table.
+# Verified directly against the European ROM: 69 targets from 0x0802338C
+# through 0x08023A28; the table ends before non-pointer data at 0x08023B4C.
+[[jump_table]]
+addr = 0x08023A38
+stride = 4
+count = 69
+format = "pcrel_thumb"
+entries_mode = "thumb"
+name = "runtime_initializers"
+note = "ALFP constructor pointers verified at 0x08023A38..0x08023B4B"
+
+# Frame-300 IWRAM dump matches the ALFP ROM byte-for-byte for 0xE1C bytes.
+# The following RAM bytes are mutable state, not part of this code image.
+[[code_copy]]
+runtime_start = 0x03000000
+source_start = 0x087D6F2C
+size = 0x00000E1C
+name = "iwram_support_code"
+note = "Exact 300-frame ALFP IWRAM/ROM match through offset 0xE1B"
+
+[[extra_func]]
+addr = 0x03000824
+source_addr = 0x087D7750
+mode = "arm"
+note = "IRQ dispatcher reached in the ALFP 300-frame probe; source verified by IWRAM comparison"
+
+[[extra_func]]
+addr = 0x03000798
+source_addr = 0x087D76C4
+mode = "arm"
+note = "Address-taken IRQ callback reached in ALFP; source verified by IWRAM comparison"
+
+[[extra_func]]
+addr = 0x03000934
+source_addr = 0x087D7860
+mode = "arm"
+resume = true
+note = "IRQ continuation observed after callback; source verified by ALFP IWRAM comparison"
+
+# ROM entries reached by the 300-frame ALFP startup probe. All addresses
+# were checked against Thumb instruction bytes in the verified European ROM.
+[[extra_func]]
+addr = 0x080113F0
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x08011A8C
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x0801F766
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x08021078
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x08021220
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x0802134C
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x0802193C
+mode = "thumb"
+note = "Runtime-observed ALFP startup entry"
+
+[[extra_func]]
+addr = 0x080113FE
+mode = "thumb"
+note = "Thumb prologue after the 0x080113F0 routine; observed at startup"
+
+[[extra_func]]
+addr = 0x08011482
+mode = "thumb"
+resume = true
+note = "Observed Thumb continuation in ALFP startup"
+
+[[extra_func]]
+addr = 0x0801F6E0
+mode = "thumb"
+note = "Observed ALFP Thumb routine; includes return at 0x0801F6F6"
+
+# Additional ALFP entries reached while the five-language selector is active.
+[[extra_func]]
+addr = 0x0800C300
+mode = "thumb"
+note = "Observed language-selector routine; contains continuations at 0x0800C31E and 0x0800C332"
+
+[[extra_func]]
+addr = 0x0800D784
+mode = "thumb"
+resume = true
+note = "Observed language-selector continuation"
+
+[[extra_func]]
+addr = 0x080114B6
+mode = "thumb"
+note = "Observed language-selector callback"
+
+[[extra_func]]
+addr = 0x08026988
+mode = "thumb"
+note = "Observed Thumb return stub during language selection"
+
+[[extra_func]]
+addr = 0x08026BB0
+mode = "thumb"
+note = "Observed language-selector callback in uncached 600-frame ALFP probe"
+
+[[extra_func]]
+addr = 0x0800BB86
+mode = "thumb"
+note = "Entrada ALFP observada en STRICT_STATIC durante prueba de 1800 fotogramas; precedida por POP PC y terminada en BX LR"
+
+[[extra_func]]
+addr = 0x0800BB94
+mode = "thumb"
+note = "Rutina ALFP verificada; termina en BX LR"
+
+[[extra_func]]
+addr = 0x0800BB9C
+mode = "thumb"
+note = "Rutina ALFP verificada; termina en BX LR"
+
+[[extra_func]]
+addr = 0x0800D78C
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0800D84A
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0800C3B6
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0800C3C4
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x080056F8
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x080055FC
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0801F2F0
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0800812E
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x080134C8
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08015978
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08005672
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0800848C
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009C28
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009C70
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009EC4
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009F48
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x080152E8
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0801C162
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08026958
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08026CDC
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009C58
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08009F7A
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08013360
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08013518
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08014860
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x0801F2BC
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08026968
+mode = "thumb"
+
+# Strict-static dispatch observed when selecting New Game with an isolated save.
+# ROM 0x08008684..0x08008690: mov r2,r0; add r2,#12; push {r3,lr};
+# mov r0,#0; bl 0x08008934; pop {r3,pc}. The preceding function ends at 0x08008682.
+[[extra_func]]
+addr = 0x08008684
+mode = "thumb"
+note = "ALFP New Game factory entry: runtime-observed and Thumb boundary verified"
+
+[[extra_func]]
+addr = 0x0801631A
+mode = "thumb"
+note = "ALFP secondary OAM draw vfunc+0x10; ROM B410 prologue follows final predicate branch at 0x08016318"
+
+[[extra_func]]
+addr = 0x0801C918
+mode = "thumb"
+note = "ALFP projected OAM draw vfunc+0x10; ROM B4F0 prologue follows final predicate branch at 0x0801C916"

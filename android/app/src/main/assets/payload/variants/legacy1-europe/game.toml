@@ -1,0 +1,637 @@
+# Dragon Ball Z: The Legacy of Goku (Europe, ALGP, revision 0).
+
+[game]
+name = "Dragon Ball Z: The Legacy of Goku"
+short_name = "dragon_ball_z_legacy_of_goku"
+
+[program]
+name = "Dragon Ball Z: The Legacy of Goku (Europe)"
+id = "ALGP"
+load_address = 0x08000000
+size = 0x00800000
+entry_pc = 0x08000000
+speculative_literal_harvest = false
+aot_scan_start = 0x080000C0
+aot_scan_end = 0x08010000
+static_resume_all = true
+codegen_shards = 32
+
+[identity]
+sha1 = "c2691355247b03083578071d4d4a017f5599be20"
+md5 = "8246b72cb4b6872724836776c123cb55"
+
+[bios]
+path = "gbarecomp/bios/gba_bios.bin"
+sha1 = "300c20df6731a33952ded8c436f7f186d25d3492"
+hle = false
+
+[rom]
+path = "roms/legacy1-europe.gba"
+sha1 = "c2691355247b03083578071d4d4a017f5599be20"
+
+[save]
+type = "eeprom"
+size = 512
+path = "saves/legacy1-europe.sav"
+
+[runtime]
+debug_port = 19887
+window_title = "DragonBallZLegacyOfGokuRecomp"
+
+[video]
+screen = "frontlit"
+view_width = 240
+resize_view = false
+
+[audio]
+shadow = false
+
+# European IRQ installation: 0x08009C1A programs DMA3 from literal
+# [0x08009CAC]=0x08000138 to [0x08009CB4]=0x03003BBC, 0x4F words.
+# 0x08009C48-0x08009C4C installs that destination at BIOS vector 0x03007FFC.
+[[code_copy]]
+runtime_start = 0x03003BBC
+source_start = 0x08000138
+size = 0x0000013C
+name = "irq_dispatcher"
+note = "ALGP DMA3 installation audited in ROM at 0x08009C1A"
+
+# ALGP audio installer 0x0800AD0A-0x0800AD56 uses four contiguous DMA3
+# spans: 89EC->3D44/A8, 8A94->3DEC/D4, 8B68->3EC0/C4,
+# 8C2C->3F84/94. Combined image ends immediately before Thumb bx lr 8CC0.
+[[code_copy]]
+runtime_start = 0x03003D44
+source_start = 0x080089EC
+size = 0x000002D4
+name = "sound_mixer"
+note = "ALGP four contiguous ARM mixer functions, verified DMA3 source/destination/counts"
+
+[[extra_func]]
+addr = 0x03003BBC
+source_addr = 0x08000138
+mode = "arm"
+note = "ALGP copied IRQ root"
+
+[[extra_func]]
+addr = 0x03003CD0
+source_addr = 0x0800024C
+mode = "arm"
+resume = true
+note = "ALGP IRQ callback continuation: source 0x0800023C sets r6 to source 0x0800024C"
+
+[[extra_func]]
+addr = 0x03003CEC
+source_addr = 0x08000268
+mode = "thumb"
+note = "ALGP IRQ bx-r6 helper and Thumb callback return target in lr"
+
+[[extra_func]]
+addr = 0x03003D44
+source_addr = 0x080089EC
+mode = "arm"
+note = "ALGP DMA-installed ARM mixer leaf; source and copy boundaries verified"
+
+[[extra_func]]
+addr = 0x03003DEC
+source_addr = 0x08008A94
+mode = "arm"
+note = "ALGP DMA-installed ARM mixer leaf; source and copy boundaries verified"
+
+[[extra_func]]
+addr = 0x03003EC0
+source_addr = 0x08008B68
+mode = "arm"
+note = "ALGP DMA-installed ARM mixer leaf; source and copy boundaries verified"
+
+[[extra_func]]
+addr = 0x03003F84
+source_addr = 0x08008C2C
+mode = "arm"
+note = "ALGP DMA-installed ARM mixer leaf; source and copy boundaries verified"
+
+# The Thumb initializer loop at 0x0800E8E8 loads [r4], adds r4, calls
+# through bx-r0 and advances r4 by four bytes. ROM literals 0x0800E90C
+# and 0x0800E910 resolve the interval [0x0800F2E8,0x0800F358).
+# Each signed offset is relative to its own slot and includes the Thumb bit.
+# All 28 resulting roots below are audited literal-store / bx-lr leaves.
+
+[[extra_func]]
+addr = 0x0800F104
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F114
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F124
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F128
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F138
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F154
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F164
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F180
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F190
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F1A0
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F1BC
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F1CC
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F1DC
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F1F8
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F214
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F224
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F230
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F240
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F250
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F260
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F270
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F280
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F290
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F29C
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F2A8
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F2B8
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F2C8
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+[[extra_func]]
+addr = 0x0800F2D8
+mode = "thumb"
+note = "ALGP signed-relative initializer table target at 0x0800F2E8-0x0800F358"
+
+# Further roots observed by the strict/normal startup probes, each checked
+# against ALGP instruction bytes and preceding function boundaries.
+
+[[extra_func]]
+addr = 0x0800F85C
+mode = "thumb"
+note = "Standalone bx-lr virtual callback, bytes 70 47"
+
+[[extra_func]]
+addr = 0x08008CC2
+mode = "thumb"
+note = "IRQ sound callback after bx-lr leaf; returns via r6; installed by 0x0800AD74"
+
+[[extra_func]]
+addr = 0x0800E22C
+mode = "thumb"
+note = "Scene initializer after preceding pop-pc/padding; literal load then push r4,lr"
+
+[[extra_func]]
+addr = 0x0800E28C
+mode = "thumb"
+note = "Scene fade callback after preceding pop-pc; ldrb r1,[r0,#4]"
+
+[[extra_func]]
+addr = 0x0800E2BA
+mode = "thumb"
+note = "Scene reset callback after preceding bx-lr; movs r0,#0"
+
+[[extra_func]]
+addr = 0x0800E2D6
+mode = "thumb"
+note = "Scene update callback after preceding bx-lr; push r3,lr"
+
+# Relative virtual-method tables installed by the constructor leaves above.
+# Virtual call sites such as 0x0800991A-0x08009920 load [vtable+slot],
+# add the VTABLE BASE (not the slot address), then call bx-r1 at 0x0800E8DA.
+# These 18 previously missing targets were audited through every reachable
+# local branch to bx-lr/pop-pc, with raw bytes and table entries cross-checked.
+# See diagnostics/2026-11-17/europe-address-audit.md for slots and CFG results.
+
+[[extra_func]]
+addr = 0x0800038E
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F618 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08000E44
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F568 slot +0x0C; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08000E4E
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F568 slot +0x10; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08000EAC
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F388 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08000F48
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F388 slot +0x10; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08000F5C
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F388 slot +0x0C; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08001BF2
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F660 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08001C7C
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F660 slot +0x0C; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08001E76
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F54C slot +0x10; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08004EE4
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F3E0 slot +0x00; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08004F34
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F3E0 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08004F4E
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F3E0 slot +0x0C; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x08005514
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F3C0 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800DC32
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F3F8 slot +0x10; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800E07C
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F598 slot +0x10; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800F7E0
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F370 slot +0x00; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800F860
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F370 slot +0x0C; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800F86C
+mode = "thumb"
+note = "ALGP relative vtable 0x0800F370 slot +0x08; complete function CFG audited"
+
+[[extra_func]]
+addr = 0x0800551E
+mode = "thumb"
+note = "ALGP extended relative vtable 0x0800F3C0 slot +0x18; full function and callsites audited"
+
+[[extra_func]]
+addr = 0x08005526
+mode = "thumb"
+note = "ALGP extended relative vtable 0x0800F3C0 slot +0x1C; full function and callsites audited"
+
+# The first ARM mixer is an unrolled loop entered through computed ADD pc.
+# Source 0x08008A10-0x08008A1C computes k=(-r2)&3; r0=3*k;
+# ADD pc,pc,r0,lsl#3 targets 8A24/8A3C/8A54/8A6C (PC reads +8).
+# These map to RAM 3D7C/3D94/3DAC/3DC4. Every aligned instruction in
+# this exact A8-byte image is ARM code (including the 8A20 MOV r0,r0).
+# Reviewed resume aliases expose the whole body after the computed branch.
+[[resume_range]]
+start = 0x03003D44
+end = 0x03003DEC
+mode = "arm"
+note = "ALGP first sound mixer exact A8-byte ARM span; four computed-ADD-pc entries verified, demo strict miss 0x03003D7C"
+
+# Cold demo 7200 gameplay callback roots, observed by a diagnostic-only
+# interpreter bridge and independently reviewed against ALGP bytes/CFG.
+# These are separate bodies following returns or literal pools, not interior
+# post-BL resumes. static_resume_all cannot discover an unknown next root.
+# The apparent tight miss clusters are NPC callback tables, not switches.
+# Full evidence: diagnostics/2026-11-17/gameplay-callback-cfg-audit.json.
+
+[[extra_func]]
+addr = 0x08003EFA
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08011108; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004B4C
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x081917AC; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004B6C
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x081917B0; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004B6E
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x081917B4; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004CE8
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191800; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004D10
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191884; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004D30
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191888; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004D98
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191844; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08004DB8
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191848; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08005750
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x0819185C; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08005774
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191860; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08005776
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191864; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08006180
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x0819186C; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x080061A0
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191870; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x080061F8
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x081917E0; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08006234
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191820; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08006450
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191780; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x08006680
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x0819180C; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x080066A0
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191810; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800B88A
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x081F429C; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800D16C
+mode = "thumb"
+note = "ALGP cold-demo callback; relative vtable 0x0800F6E8 slot +0x00; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800D188
+mode = "thumb"
+note = "ALGP cold-demo callback; relative vtable 0x0800F6E8 slot +0x08; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800D1EC
+mode = "thumb"
+note = "ALGP cold-demo callback; relative vtable 0x0800F6E8 slot +0x0C; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800D2A2
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x0850B484; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800DD74
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191834; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800DD94
+mode = "thumb"
+note = "ALGP cold-demo callback; ROM pointer at 0x08191838; complete CFG and boundary audited"
+
+[[extra_func]]
+addr = 0x0800D262
+mode = "thumb"
+note = "ALGP Thumb entry after POP PC at 0x0800D260; runtime dispatch miss verified"
+
+[[extra_func]]
+addr = 0x080061D8
+mode = "thumb"
+note = "ALGP function after literal pool at 0x080061D4; verified dispatch miss"
+
+
+[[extra_func]]
+addr = 0x08004CC8
+mode = "thumb"
+note = "ALGP verified Thumb function entry; gameplay callback region"
+
+
+[[extra_func]]
+addr = 0x08002D14
+mode = "thumb"
+note = "ALGP verified independent Thumb entry"
+
+
+[[extra_func]]
+addr = 0x08002D20
+mode = "thumb"
+note = "ALGP verified independent Thumb entry"
+
+
+[[extra_func]]
+addr = 0x08002D48
+mode = "thumb"
+note = "ALGP verified independent Thumb entry"
+
+
+[[extra_func]]
+addr = 0x08002D54
+mode = "thumb"
+note = "ALGP verified independent Thumb entry"
+
+
+[[extra_func]]
+addr = 0x08002D7C
+mode = "thumb"
+note = "ALGP verified independent Thumb entry"
+
+
+[[jump_table]]
+addr = 0x08003CF4
+base = 0x08003CF4
+stride = 2
+count = 5
+format = "u16_rel_thumb"
+entries_mode = "thumb"
+name = "algp_options_menu"
+note = "ALGP five-case Thumb jump table; ADD PC,R3 at 0x08003CF0"
+
+
+[[extra_func]]
+addr = 0x0800B548
+mode = "thumb"
+note = "ALGP verified save-related function boundary"
+
+
+[[extra_func]]
+addr = 0x0800B5B4
+mode = "thumb"
+note = "ALGP verified save-related function boundary"
+
+[[extra_func]]
+addr = 0x08006374
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x08006394
+mode = "thumb"
+
+[[extra_func]]
+addr = 0x080035F4
+mode = "thumb"
+note = "ALGP verified interaction code entry"
+
+[[extra_func]]
+addr = 0x08003610
+mode = "thumb"
+note = "ALGP verified interaction code entry"
+
+[[extra_func]]
+addr = 0x08003620
+mode = "thumb"
+note = "ALGP verified interaction code entry"
