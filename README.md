@@ -28,7 +28,7 @@ Real screenshots of Legacy Trilogy and its three games on AYN Thor Max.
 
 ### Launcher — Legacy Trilogy
 
-<a href="docs/screenshots/launcher/Screenshot_20261119-203454.png"><img src="docs/screenshots/launcher/Screenshot_20261119-203454.png" alt="Launcher — Legacy Trilogy: Screenshot 20261119 203454" width="310"></a>
+<a href="docs/screenshots/launcher/Screenshot_20261121-124352.png"><img src="docs/screenshots/launcher/Screenshot_20261121-124352.png" alt="Launcher — Legacy Trilogy: Screenshot 20261119 203454" width="310"></a>
 <a href="docs/screenshots/launcher/Screenshot_20261121-122459.png"><img src="docs/screenshots/launcher/Screenshot_20261121-122459.png" alt="Launcher — Legacy Trilogy: Screenshot 20261121 122459" width="310"></a>
 <a href="docs/screenshots/launcher/Screenshot_20261121-122528.png"><img src="docs/screenshots/launcher/Screenshot_20261121-122528.png" alt="Launcher — Legacy Trilogy: Screenshot 20261121 122528" width="310"></a>
 
