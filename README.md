@@ -1,5 +1,11 @@
 # 🐉 Dragon Ball Z — Legacy Trilogy
 
+[![Buy Me a Coffee](https://img.shields.io/badge/☕_Buy_Me_a_Coffee-Support_the_Project-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/erpiopio)
+
+🇪🇸 ¿Te gusta Legacy Trilogy? [¡Invítame a un café!](https://buymeacoffee.com/erpiopio) ☕
+
+🇬🇧 Enjoying Legacy Trilogy? [Buy me a coffee!](https://buymeacoffee.com/erpiopio) ☕
+
 ### Three GBA adventures. One application. Two screens.
 
 **Legacy Trilogy** is an unofficial fan project that brings three Dragon Ball Z Game Boy Advance adventures together in one Android application, specially adapted for the **AYN Thor Max** dual-screen handheld.
