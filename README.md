@@ -62,7 +62,6 @@ Real screenshots of Legacy Trilogy and its three games on AYN Thor Max.
 
 ### Buu's Fury
 
-<a href="docs/screenshots/buusfury/dual-screen-showcase.png"><img src="docs/screenshots/buusfury/dual-screen-showcase.png" alt="Buu's Fury: dual screen showcase" width="310"></a>
 <a href="docs/screenshots/buusfury/gameplay-widescreen.png"><img src="docs/screenshots/buusfury/gameplay-widescreen.png" alt="Buu's Fury: gameplay widescreen" width="310"></a>
 <a href="docs/screenshots/buusfury/menu-equipment.png"><img src="docs/screenshots/buusfury/menu-equipment.png" alt="Buu's Fury: menu equipment" width="310"></a>
 
