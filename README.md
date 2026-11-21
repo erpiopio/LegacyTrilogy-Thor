@@ -52,6 +52,11 @@ Real screenshots of Legacy Trilogy and its three games on AYN Thor Max.
 ### The Legacy of Goku II
 
 <a href="docs/screenshots/legacy2/captura.png"><img src="docs/screenshots/legacy2/captura.png" alt="The Legacy of Goku II: captura" width="310"></a>
+<a href="docs/screenshots/legacy2/estado.png"><img src="docs/screenshots/legacy2/estado.png" alt="The Legacy of Goku II: Estado" width="310"></a>
+<a href="docs/screenshots/legacy2/diario.png"><img src="docs/screenshots/legacy2/diario.png" alt="The Legacy of Goku II: Diario" width="310"></a>
+<a href="docs/screenshots/legacy2/objetos.png"><img src="docs/screenshots/legacy2/objetos.png" alt="The Legacy of Goku II: Objetos" width="310"></a>
+<a href="docs/screenshots/legacy2/habilidades.png"><img src="docs/screenshots/legacy2/habilidades.png" alt="The Legacy of Goku II: Habilidades" width="310"></a>
+<a href="docs/screenshots/legacy2/mapa.png"><img src="docs/screenshots/legacy2/mapa.png" alt="The Legacy of Goku II: Mapa" width="310"></a>
 
 ---
 
